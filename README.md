@@ -336,7 +336,27 @@ AI: 이 기능을 다음과 같이 분해했습니다:
 
 ### Spring Boot
 
-*(Spring 예시는 필요시 추가)*
+- **Service Layer**: `examples/spring/services/UserService.java`
+  - `@Service`, `@Transactional` 어노테이션
+  - Lombok `@RequiredArgsConstructor` 사용
+  - 상세한 JavaDoc
+  - 한글 메서드명
+  - 검증 로직 분리
+
+- **Repository**: `examples/spring/repositories/UserRepository.java`
+  - Spring Data JPA 사용
+  - 커스텀 쿼리 메서드
+  - `@Query` 어노테이션 활용
+  - Fetch Join으로 N+1 방지
+  - DTO Projection 예시
+
+- **Tests**: `examples/spring/tests/UserServiceTest.java`
+  - JUnit 5 + Mockito
+  - `@Nested` 클래스로 테스트 그룹핑
+  - `@DisplayName` 한글 테스트명
+  - `@ParameterizedTest` 경계값 테스트
+  - AssertJ 사용
+  - BDDMockito 스타일
 
 ## 기여 방법
 
